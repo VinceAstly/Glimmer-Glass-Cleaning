@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 
@@ -25,11 +25,10 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-smooth ${
-        scrolled
+      className={`fixed top-0 inset-x-0 z-50 transition-smooth ${scrolled
           ? "bg-background/85 backdrop-blur-lg border-b border-border/60"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="container mx-auto flex items-center justify-between py-4">
         <a href="#top" className="flex items-center gap-3 group">
@@ -62,7 +61,10 @@ export const Navbar = () => {
         </ul>
 
         <Button asChild variant="hero" size="sm" className="hidden md:inline-flex">
-          <a href="#contact">Free quote</a>
+          <a href="tel:0424811607">
+            <Phone className="mr-2 h-4 w-4" />
+            0424 811 607
+          </a>
         </Button>
 
         <button
@@ -90,7 +92,10 @@ export const Navbar = () => {
             ))}
             <li>
               <Button asChild variant="hero" className="w-full mt-2">
-                <a href="#contact" onClick={() => setOpen(false)}>Free quote</a>
+                <a href="tel:0424811607" onClick={() => setOpen(false)}>
+                  <Phone className="mr-2 h-4 w-4" />
+                  0424 811 607
+                </a>
               </Button>
             </li>
           </ul>
