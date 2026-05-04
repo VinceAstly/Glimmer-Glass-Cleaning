@@ -5,10 +5,10 @@ const plans = [
   {
     name: "Quarterly Cleaning",
     cadence: "Every 3 months",
-    discount: "$100 OFF",
+    discount: "$150 OFF",
     tagline: "Best value for spotless windows all year round",
     perks: [
-      { label: "$100 OFF every clean", included: true },
+      { label: "$150 OFF every clean", included: true },
       { label: "FREE screen cleaning", included: true },
       { label: "FREE hard water removal", included: true },
       { label: "Priority booking", included: true },
@@ -18,10 +18,10 @@ const plans = [
   {
     name: "Bi-Annual Cleaning",
     cadence: "Every 6 months",
-    discount: "$50 OFF",
+    discount: "$100 OFF",
     tagline: "Great for keeping your home fresh twice a year",
     perks: [
-      { label: "$50 OFF every clean", included: true },
+      { label: "$100 OFF every clean", included: true },
       { label: "FREE screen cleaning", included: true },
       { label: "Hard water removal", included: false },
       { label: "Priority booking", included: false },
@@ -65,11 +65,10 @@ export const Plans = () => {
           {plans.map((p, i) => (
             <article
               key={p.name}
-              className={`relative rounded-3xl p-8 lg:p-9 border transition-smooth flex flex-col animate-fade-up ${
-                p.featured
+              className={`relative rounded-3xl p-8 lg:p-9 border transition-smooth flex flex-col animate-fade-up ${p.featured
                   ? "bg-gradient-hero text-primary-foreground border-primary shadow-glow lg:scale-105 lg:-my-2"
                   : "bg-card text-foreground border-border shadow-card hover:shadow-soft"
-              }`}
+                }`}
               style={{ animationDelay: `${i * 80}ms` }}
             >
               {p.featured && (
@@ -100,15 +99,14 @@ export const Plans = () => {
                 {p.perks.map((perk) => (
                   <li key={perk.label} className="flex items-start gap-3 text-sm">
                     <span
-                      className={`shrink-0 mt-0.5 h-5 w-5 rounded-full flex items-center justify-center ${
-                        perk.included
+                      className={`shrink-0 mt-0.5 h-5 w-5 rounded-full flex items-center justify-center ${perk.included
                           ? p.featured
                             ? "bg-accent text-primary"
                             : "bg-primary/10 text-primary"
                           : p.featured
                             ? "bg-primary-foreground/10 text-primary-foreground/50"
                             : "bg-muted text-muted-foreground"
-                      }`}
+                        }`}
                     >
                       {perk.included ? <Check className="h-3 w-3" strokeWidth={3} /> : <X className="h-3 w-3" strokeWidth={3} />}
                     </span>
