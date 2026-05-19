@@ -69,6 +69,7 @@ export const Footer = () => {
 
       <div className="container mx-auto mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-primary-foreground/50">
         <p>© {new Date().getFullYear()} Glimmer Glass Cleaning. All rights reserved.</p>
+        <p>P9Z6ua</p>
         <p>Crafted with care in Adelaide.</p>
       </div>
     </footer>
